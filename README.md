@@ -60,9 +60,9 @@ The project now features a **modern, production-grade web UI** designed for intu
 - ⚡ Fast API-driven responses with smooth UX
 
 ### UI Preview
-<p align="center">
-  <img src="C:\Users\Devansh\music_player\music-gnn-player\asset\ui_preview.png" alt="Graph-based music recommendation UI" width="90%">
-</p>
+
+![Graph-based music recommendation UI](asset/ui_preview.png)
+
 
 > The UI communicates directly with the FastAPI backend for real-time inference and visualization.
 
