@@ -1,9 +1,19 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI(title="GNN Music Recommender")
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 df = pd.read_csv(r"C:\Users\Devansh\music_player\music-gnn-player\data\spotify_ml.csv")
 embeddings = np.load(r"C:\Users\Devansh\music_player\music-gnn-player\ml\song_embeddings.npy")

@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Light mode - Clean, minimal aesthetic */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 30%;
+    --muted: 0 0% 88%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 92%;
+    --ring: 0 0% 15%;
+    --chart-1: 120 100% 50%;
+    --chart-2: 200 90% 45%;
+    --chart-3: 300 80% 50%;
+    --chart-4: 40 95% 50%;
+    --chart-5: 0 85% 55%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 0 0% 15%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 92%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 15%;
+  }
+  .dark {
+    /* Dark mode - Elegant dark theme */
+    --background: 20 15% 12%;
+    --foreground: 0 0% 95%;
+    --card: 20 15% 18%;
+    --card-foreground: 0 0% 95%;
+    --popover: 20 15% 18%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 20 15% 12%;
+    --secondary: 20 10% 25%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 20 10% 30%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 10% 25%;
+    --input: 20 10% 25%;
+    --ring: 0 0% 95%;
+    --chart-1: 120 100% 50%;
+    --chart-2: 200 90% 45%;
+    --chart-3: 300 80% 50%;
+    --chart-4: 40 95% 50%;
+    --chart-5: 0 85% 55%;
+    --sidebar-background: 20 15% 15%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 0% 95%;
+    --sidebar-primary-foreground: 20 15% 12%;
+    --sidebar-accent: 20 10% 25%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 20 10% 25%;
+    --sidebar-ring: 0 0% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Fluid slider styling */
+  [role='slider'] {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Slider track */
+  [role='slider'] > span:first-child {
+    @apply h-1 bg-secondary/60 backdrop-blur-sm transition-all duration-200;
+  }
+
+  /* Slider range (filled portion) */
+  [role='slider'] [style*='left'] {
+    @apply bg-accent transition-all duration-200 ease-out;
+    box-shadow: 0 0 12px rgba(120, 100, 60, 0.4);
+  }
+
+  /* Slider thumb */
+  [role='slider'] [role='button'] {
+    @apply h-6 w-6 rounded-full bg-background shadow-lg transition-all duration-300 ease-out;
+    border: 2px solid hsl(var(--accent));
+    box-shadow: 0 0 0 0 rgba(120, 100, 60, 0.1);
+  }
+
+  [role='slider'] [role='button']:hover {
+    @apply scale-110;
+    box-shadow: 0 0 0 6px rgba(120, 100, 60, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  [role='slider'] [role='button']:active {
+    @apply scale-105;
+    box-shadow: 0 0 0 8px rgba(120, 100, 60, 0.2), 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  [role='slider'] [role='button']:focus-visible {
+    @apply outline-none;
+    box-shadow: 0 0 0 8px rgba(120, 100, 60, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark [role='slider'] [role='button'] {
+    @apply shadow-xl;
+  }
+}
