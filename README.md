@@ -6,8 +6,9 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-Geometric-red.svg)](https://pytorch-geometric.readthedocs.io/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104-green.svg)](https://fastapi.tiangolo.com/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.28-FF4B4B.svg)](https://streamlit.io/)
+
 
 </div>
 
@@ -41,11 +42,30 @@ Interactive graph visualization reveals the "why" behind recommendations, showin
 
 ### 🖥️ **Full-Stack ML System**
 Complete production-ready architecture:
+- **Frontend**: Next.js (React + TypeScript) for a modern, responsive UI
+- **Visualization**: Custom interactive graph rendering
 - **Backend**: FastAPI for high-performance inference
-- **Frontend**: Streamlit for interactive UI
-- **ML Pipeline**: PyTorch Geometric for graph learning
+
 
 ---
+## 🖥️ Updated User Interface (New)
+
+The project now features a **modern, production-grade web UI** designed for intuitive music exploration and graph-based discovery.
+
+### Highlights of the New UI
+- 🎨 Clean, dark-themed design inspired by modern music platforms
+- 🕸️ Interactive graph visualization of song relationships
+- 🎵 Song selector with real-time recommendation updates
+- 🎚️ Adjustable recommendation depth
+- ⚡ Fast API-driven responses with smooth UX
+
+### UI Preview
+<p align="center">
+  <img src="C:\Users\Devansh\music_player\music-gnn-player\asset\ui_preview.png" alt="Graph-based music recommendation UI" width="90%">
+</p>
+
+> The UI communicates directly with the FastAPI backend for real-time inference and visualization.
+
 
 ## 🏗️ System Architecture
 
@@ -85,11 +105,11 @@ Complete production-ready architecture:
 │   (REST API Endpoints)          │
 └────────────┬────────────────────┘
              │
-             ▼
-┌─────────────────────────────────┐
-│   Streamlit UI                  │
-│   + PyVis Graph Visualization   │
-└─────────────────────────────────┘
+ _________________________________            ▼
+│   Next.js Web UI                │
+│   Interactive Graph Network     │
+│   (API-driven Visualization)    │
+|_________________________________|
 ```
 
 ---
@@ -152,7 +172,11 @@ music-gnn-player/
 │       └── main.py              # FastAPI application & endpoints
 │
 ├── frontend/
-│   └── app.py                   # Streamlit UI application
+│   ├── app/                      # Next.js app router
+│   ├── components/               # UI & graph components
+│   ├── hooks/                    # Custom React hooks
+│   └── lib/                      # API & utility logic
+
 │
 ├── ml/
 │   ├── prepare_dataset.py       # Data preprocessing pipeline
